@@ -70,3 +70,5 @@ const Sidebar = () => {
 		</aside>
 	);
 };
+
+export default Sidebar;
