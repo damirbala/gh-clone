@@ -15,7 +15,7 @@ const HomePage = () => {
 
 	const [sortType, setSortType] = useState("recent");
 
-	const getUserProfileAndRepos = useCallback(async (username = "burakorkmez") => {
+	const getUserProfileAndRepos = useCallback(async (username = "damirbala") => {
 		setLoading(true);
 		try {
 			const res = await fetch(`/api/users/profile/${username}`);
@@ -38,6 +38,19 @@ const HomePage = () => {
 		getUserProfileAndRepos();
 	}, [getUserProfileAndRepos]);
 
+	const onSearch = async (e, username) => {
+		e.preventDefault();
+		
+		setLoading(true);
+		setRepos([]);
+		setUserProfile(null);
+
+		const {userProfile, repos} = await getUserProfileAndRepos(username);
+
+		setUserProfile(userProfile);
+		setRepos(repos);
+		setLoading(false);
+	}
 
 	return (
 		<div className='m-4'>

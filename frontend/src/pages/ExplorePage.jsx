@@ -1,4 +1,5 @@
 const ExplorePage = () => {
+	// https://api.github.com/search/repositories?q=language:javascript&sort=stars&order=desc&per_page=10
 	return (
 		<div className='px-4'>
 			<div className='bg-glass max-w-2xl mx-auto rounded-md p-4'>
