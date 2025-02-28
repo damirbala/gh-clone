@@ -1,0 +1,23 @@
+{
+  "name": "gh-clone",
+  "version": "1.0.0",
+  "description": "Hello! Here I created github clone MERN stack project as my pet-project.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.11.0"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "nodemon": "^3.1.9"
+  }
+}
