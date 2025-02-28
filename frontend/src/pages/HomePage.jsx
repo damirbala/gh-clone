@@ -20,7 +20,7 @@ const HomePage = () => {
 		try {
 			const userRes = await fetch(`https://api.github.com/users/${username}`, {
 				headers:{
-					authorization: `token`,
+					authorization: `token `,
 				},
 			});
 			const userProfile = await userRes.json();
