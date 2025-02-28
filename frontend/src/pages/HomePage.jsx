@@ -13,14 +13,14 @@ const HomePage = () => {
 	const [repos, setRepos] = useState([]);
 	const [loading, setLoading] = useState(false); 
 
-	const [sortType, setSortType] = useState("forks");
+	const [sortType, setSortType] = useState("recent");
 
 	const getUserProfileAndRepos = useCallback(async(username="damirbala") => {
 		setLoading(true);
 		try {
 			const userRes = await fetch(`https://api.github.com/users/${username}`, {
 				headers:{
-					authorization: `token `,
+					authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
 				},
 			});
 			const userProfile = await userRes.json();
@@ -55,6 +55,7 @@ const HomePage = () => {
 		setUserProfile(userProfile);
 		setRepos(repos);
 		setLoading(false);
+		setSortType("recent");
 	};
 
 	const onSort = (sortType) => {
